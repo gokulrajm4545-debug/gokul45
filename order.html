@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Order - Hitman Food Delivery</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    body{
+        font-family: Arial, sans-serif;
+        margin:0;
+        padding:0;
+        background:linear-gradient(135deg,#ff9966,#ff5e62);
+        background-repeat:no-repeat;
+        background-size:cover;
+        min-height:100vh;
+    }
+
+    h1{
+        text-align:center;
+        color:white;
+        padding-top:20px;
+    }
+
+    form{
+        width:400px;
+        margin:30px auto;
+        background:white;
+        padding:20px;
+        border-radius:15px;
+        box-shadow:0 0 15px rgba(0,0,0,0.3);
+    }
+
+    input{
+        width:95%;
+        padding:10px;
+        border:1px solid #ccc;
+        border-radius:8px;
+    }
+
+    button{
+        width:100%;
+        padding:12px;
+        background:#ff6600;
+        color:white;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        font-size:16px;
+    }
+
+    button:hover{
+        background:#e65c00;
+    }
+
+    #qr{
+        text-align:center;
+    }
+    </style>
+
+</head>
+<body>
+
+<h1>📦 Place Your Order</h1>
+
+<form>
+
+<input type="text" placeholder="Customer Name" required><br><br>
+
+<input type="text" placeholder="Delivery Address" required><br><br>
+
+<input type="tel" placeholder="Phone Number" required><br><br>
+
+<h3>Select Payment Method</h3>
+
+<input type="radio" name="payment" value="UPI" onclick="showQR()" required>
+<label>UPI Payment</label><br><br>
+
+<input type="radio" name="payment" value="Cash on Delivery" onclick="hideQR()">
+<label>Cash on Delivery</label><br><br>
+
+<input type="radio" name="payment" value="Credit Card" onclick="hideQR()">
+<label>Credit Card</label><br><br>
+
+<div id="qr" style="display:none;">
+    <h3>Scan & Pay</h3>
+    <img src="qr.png" width="200" alt="QR Code">
+    <p>Scan the QR code using any UPI app.</p>
+</div>
+
+<br>
+
+<button type="button" onclick="window.location.href='delivery.html'">
+    Place Order
+</button>
+
+</form>
+
+<script>
+function showQR(){
+    document.getElementById("qr").style.display="block";
+}
+
+function hideQR(){
+    document.getElementById("qr").style.display="none";
+}
+</script>
+
+</body>
+</html>
